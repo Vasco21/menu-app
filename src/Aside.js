@@ -1,5 +1,6 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
+import { Link } from 'react-router-dom';
 import {
   ProSidebar,
   Menu,
@@ -36,7 +37,7 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
             whiteSpace: 'nowrap',
           }}
         >
-          {intl.formatMessage({ id: 'sidebarTitle' })}
+          {intl.formatMessage({ id: 'Welcome to CP DEV' })}
         </div>
       </SidebarHeader>
 
@@ -93,7 +94,7 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
           }}
         >
           <a
-            href="https://github.com/azouaoui-med/react-pro-sidebar"
+            href="https://github.com/Vasco21/menu-app"
             target="_blank"
             className="sidebar-btn"
             rel="noopener noreferrer"
