@@ -1,6 +1,6 @@
-import React from 'react';
-import { useIntl } from 'react-intl';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { useIntl } from "react-intl";
+import { Link } from "react-router-dom";
 import {
   ProSidebar,
   Menu,
@@ -9,9 +9,16 @@ import {
   SidebarHeader,
   SidebarFooter,
   SidebarContent,
-} from 'react-pro-sidebar';
-import { FaTachometerAlt, FaGem, FaList, FaGithub, FaRegLaughWink, FaHeart } from 'react-icons/fa';
-import sidebarBg from './assets/bg2.jpg';
+} from "react-pro-sidebar";
+import {
+  FaTachometerAlt,
+  FaGem,
+  FaList,
+  FaGithub,
+  FaRegLaughWink,
+  FaHeart,
+} from "react-icons/fa";
+import sidebarBg from "./assets/bg2.jpg";
 
 const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
   const intl = useIntl();
@@ -27,17 +34,17 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
       <SidebarHeader>
         <div
           style={{
-            padding: '24px',
-            textTransform: 'uppercase',
-            fontWeight: 'bold',
+            padding: "24px",
+            textTransform: "uppercase",
+            fontWeight: "bold",
             fontSize: 14,
-            letterSpacing: '1px',
-            overflow: 'hidden',
-            textOverflow: 'ellipsis',
-            whiteSpace: 'nowrap',
+            letterSpacing: "1px",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
           }}
         >
-          {intl.formatMessage({ id: 'Welcome to CP DEV' })}
+          {intl.formatMessage({ id: "Welcome to CP DEV" })}
         </div>
       </SidebarHeader>
 
@@ -45,52 +52,68 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
         <Menu iconShape="circle">
           <MenuItem
             icon={<FaTachometerAlt />}
-            suffix={<span className="badge red">{intl.formatMessage({ id: 'new' })}</span>}
+            suffix={
+              <span className="badge red">
+                {intl.formatMessage({ id: "new" })}
+              </span>
+            }
           >
-            {intl.formatMessage({ id: 'dashboard' })}
+            {intl.formatMessage({ id: "dashboard" })}
           </MenuItem>
-          <MenuItem icon={<FaGem />}> {intl.formatMessage({ id: 'components' })}</MenuItem>
+          <SubMenu title="Components" icon={<FaGem />}>
+            <MenuItem>Component 1</MenuItem>
+            <MenuItem>Component 2</MenuItem>
+          </SubMenu>
         </Menu>
         <Menu iconShape="circle">
           <SubMenu
             suffix={<span className="badge yellow">3</span>}
-            title={intl.formatMessage({ id: 'withSuffix' })}
+            title={intl.formatMessage({ id: "withSuffix" })}
             icon={<FaRegLaughWink />}
           >
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+            <MenuItem>{intl.formatMessage({ id: "submenu" })} 1</MenuItem>
+            <MenuItem>{intl.formatMessage({ id: "submenu" })} 2</MenuItem>
+            <MenuItem>{intl.formatMessage({ id: "submenu" })} 3</MenuItem>
           </SubMenu>
           <SubMenu
             prefix={<span className="badge gray">3</span>}
-            title={intl.formatMessage({ id: 'withPrefix' })}
+            title={intl.formatMessage({ id: "withPrefix" })}
             icon={<FaHeart />}
           >
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2</MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3</MenuItem>
+            <MenuItem>{intl.formatMessage({ id: "submenu" })} 1</MenuItem>
+            <MenuItem>{intl.formatMessage({ id: "submenu" })} 2</MenuItem>
+            <MenuItem>{intl.formatMessage({ id: "submenu" })} 3</MenuItem>
           </SubMenu>
-          <SubMenu title={intl.formatMessage({ id: 'multiLevel' })} icon={<FaList />}>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 1 </MenuItem>
-            <MenuItem>{intl.formatMessage({ id: 'submenu' })} 2 </MenuItem>
-            <SubMenu title={`${intl.formatMessage({ id: 'submenu' })} 3`}>
-              <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.1 </MenuItem>
-              <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.2 </MenuItem>
-              <SubMenu title={`${intl.formatMessage({ id: 'submenu' })} 3.3`}>
-                <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.1 </MenuItem>
-                <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.2 </MenuItem>
-                <MenuItem>{intl.formatMessage({ id: 'submenu' })} 3.3.3 </MenuItem>
+          <SubMenu
+            title={intl.formatMessage({ id: "multiLevel" })}
+            icon={<FaList />}
+          >
+            <MenuItem>{intl.formatMessage({ id: "submenu" })} 1 </MenuItem>
+            <MenuItem>{intl.formatMessage({ id: "submenu" })} 2 </MenuItem>
+            <SubMenu title={`${intl.formatMessage({ id: "submenu" })} 3`}>
+              <MenuItem>{intl.formatMessage({ id: "submenu" })} 3.1 </MenuItem>
+              <MenuItem>{intl.formatMessage({ id: "submenu" })} 3.2 </MenuItem>
+              <SubMenu title={`${intl.formatMessage({ id: "submenu" })} 3.3`}>
+                <MenuItem>
+                  {intl.formatMessage({ id: "submenu" })} 3.3.1{" "}
+                </MenuItem>
+                <MenuItem>
+                  {intl.formatMessage({ id: "submenu" })} 3.3.2{" "}
+                </MenuItem>
+                <MenuItem>
+                  {intl.formatMessage({ id: "submenu" })} 3.3.3{" "}
+                </MenuItem>
               </SubMenu>
             </SubMenu>
           </SubMenu>
         </Menu>
       </SidebarContent>
 
-      <SidebarFooter style={{ textAlign: 'center' }}>
+      <SidebarFooter style={{ textAlign: "center" }}>
         <div
           className="sidebar-btn-wrapper"
           style={{
-            padding: '20px 24px',
+            padding: "20px 24px",
           }}
         >
           <a
@@ -100,8 +123,14 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
             rel="noopener noreferrer"
           >
             <FaGithub />
-            <span style={{ whiteSpace: 'nowrap', textOverflow: 'ellipsis', overflow: 'hidden' }}>
-              {intl.formatMessage({ id: 'viewSource' })}
+            <span
+              style={{
+                whiteSpace: "nowrap",
+                textOverflow: "ellipsis",
+                overflow: "hidden",
+              }}
+            >
+              {intl.formatMessage({ id: "viewSource" })}
             </span>
           </a>
         </div>
