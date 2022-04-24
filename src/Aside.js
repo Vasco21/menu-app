@@ -71,7 +71,7 @@ const Aside = ({ image, collapsed, rtl, toggled, handleToggleSidebar }) => {
             title={intl.formatMessage({ id: "withSuffix" })}
             icon={<FaRegLaughWink />}
           >
-            <MenuItem>{intl.formatMessage({ id: "submenu" })} 1</MenuItem>
+            <MenuItem>{intl.formatMessage({ id: "About-us" })} 1</MenuItem>
             <MenuItem>{intl.formatMessage({ id: "submenu" })} 2</MenuItem>
             <MenuItem>{intl.formatMessage({ id: "submenu" })} 3</MenuItem>
           </SubMenu>
